@@ -7,7 +7,7 @@
 
 ## We will start our project with Structuring components
         
-        {/* Header */}
+      {/* Header */}
       {/* Title + Dropdown box */}
 
       {/* InfoBox --> cases */}
