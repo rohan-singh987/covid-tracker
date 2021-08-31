@@ -3,8 +3,9 @@ import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/c
 import InfoBox from "./InfoBox";
 import Map from "./Map";
 import Table from "./Table";
-import './App.css';
 import { sortData } from "./util";
+import LineGraph from "./LineGraph";
+import './App.css';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -125,13 +126,13 @@ return (
 
                 <Table countries={tableData} />
             {/* Table */}
-            {/* graph */}
                 
                 <h2>World Wide new cases</h2>
-            </CardContent>
             
+                <LineGraph/>
+            {/* graph */}
 
-
+            </CardContent>
         </Card>
 
     </div>
