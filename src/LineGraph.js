@@ -7,20 +7,20 @@ function LineGraph() {
 
     // https://disease.sh/v3/covid-19/historical/all?lastdays=120
 
-    const buildChartData = (data, casesType = 'cases ') => {
+    const buildChartData = (data, caseType = "cases") => {
         const chartData = [];
         let lastDataPoint;
 
-        data[casesType].forEach(date =>{
+       for(let date in data.cases) {
             if (lastDataPoint){
                 const newDataPoint = {
                     x: date,
-                    y: data[casesType][date] - lastDataPoint
+                    y: data[caseType][date] - lastDataPoint
                 }
                 chartData.push(newDataPoint);
             }
-            lastDataPoint = data[casesType][date];
-        })
+            lastDataPoint = data[caseType][date];
+        }
         return chartData
     }
 
@@ -30,8 +30,9 @@ function LineGraph() {
         .then(response => response.json())
         .then(data =>{
 
-            console.log(data)
-
+            console.log(data);
+            const chartData = buildChartData(data)
+            setData(chartData)
         })
 
     }, []);
@@ -40,7 +41,9 @@ function LineGraph() {
 
     return (
         <div>
-            {/* <Line data options /> */}
+            <Line data={{
+               datasets : [{data: data,},] 
+            }} />
         </div>
     )
 }
