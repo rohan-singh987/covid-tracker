@@ -69,7 +69,7 @@ return (
             <div className="app__header">
                 <h1>COVID-19 TRACKER</h1>
     
-                        {/* Header */}
+                            {/* Header */}
                         {/* Title + Dropdown box */}
     
                 <FormControl className="app__dropdown">
